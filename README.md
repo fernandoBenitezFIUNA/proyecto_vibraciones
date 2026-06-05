@@ -50,7 +50,7 @@ Accuracy final en conjunto de prueba:
 
 ## Visualizaciones
 
-![FFT](images/fft.png)
+![FFT](images/FFT.png)
 
 ![Confusion Matrix](images/confusion_matrix.png)
 
