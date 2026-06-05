@@ -1,9 +1,10 @@
 # Clasificación de Condiciones de Desbalance mediante Machine Learning
 
-## Descripción
 Proyecto desarrollado en la Facultad de Ingeniería de la Universidad Nacional de Asunción (FIUNA).
 
 Se utilizaron señales de vibración obtenidas de un sistema rotativo para clasificar condiciones de desbalance mediante técnicas de Machine Learning.
+
+![Portada](images/confusion_matrix.png)
 
 ## Objetivos
 - Adquirir señales de vibración.
@@ -44,7 +45,9 @@ Condiciones evaluadas:
 | Random Forest | 76.8% |
 | SVM | 45.6% |
 
-Accuracy final en conjunto de prueba:
+El modelo Random Forest fue seleccionado como modelo final.
+
+Accuracy obtenido en el conjunto de prueba:
 
 **93%**
 
