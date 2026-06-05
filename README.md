@@ -64,9 +64,13 @@ Condiciones evaluadas:
 | Random Forest | 84.7% |
 | SVM | 45.6% |
 
-*Nota: Se actualizó el Accuracy CV de Random Forest al 84.7% en base al promedio de las iteraciones.*
+*Nota: Se actualizó el Accuracy CV de Random Forest en base al promedio de las iteraciones detalladas a continuación.*
 
 ### Detalle de Validación Cruzada (Random Forest)
+
+Para proporcionar más detalle sobre el desempeño del modelo final (Random Forest), a continuación se presentan los resultados individuales por *fold* y las matrices de confusión correspondientes:
+
+**Tabla de Accuracy por Iteración:**
 
 | Fold | Accuracy |
 |------|----------|
@@ -82,21 +86,4 @@ Condiciones evaluadas:
 - **Accuracy mínimo:** 0.7407
 - **Desviación estándar:** 0.0640
 
-El modelo Random Forest fue seleccionado como modelo final.
-
-Accuracy obtenido en el conjunto de prueba:
-
-**93%**
-
-## Visualizaciones
-
-![FFT](images/FFT.png)
-
-![Confusion Matrix](images/confusion_matrix.png)
-
-## Autores
-
-- Fernando Benitez
-- Manuel Arrom
-
-FIUNA - 2026
+---
