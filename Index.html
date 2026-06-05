@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portafolio profesional de Fernando Benitez, estudiante de Ingenieria Electromecanica e interesado en IA, programacion y analisis de datos." />
+  <title>
+Fernando Benitez & Manuel Arrom | Proyecto IA Vibraciones
+</title>
+  
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --surface: #ffffff;
+      --ink: #18202f;
+      --muted: #5e6a7d;
+      --line: #dce3ed;
+      --accent: #0f766e;
+      --accent-dark: #115e59;
+      --blue: #1d4ed8;
+      --gold: #b7791f;
+      --shadow: 0 18px 45px rgba(24, 32, 47, 0.10);
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent-dark);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      min-height: 100vh;
+    }
+
+    .hero {
+      background:
+        linear-gradient(135deg, rgba(15, 118, 110, 0.94), rgba(29, 78, 216, 0.84)),
+        url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 56px 20px 44px;
+    }
+
+    .hero-inner,
+    .content {
+      width: min(1080px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.35fr 0.65fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      opacity: 0.88;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.3rem, 5vw, 4.5rem);
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin: 12px 0 0;
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      font-weight: 700;
+      opacity: 0.95;
+    }
+
+    .intro {
+      max-width: 720px;
+      margin: 22px 0 0;
+      font-size: 1.02rem;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 10px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.44);
+      border-radius: var(--radius);
+      color: white;
+      background: rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(10px);
+      font-weight: 700;
+    }
+
+    .button.primary {
+      color: #073b36;
+      background: white;
+      border-color: white;
+    }
+
+    .portrait {
+    width: min(280px, 100%);
+    aspect-ratio: 1;
+    margin-left: auto;
+    border-radius: 50%;
+    border: 8px solid rgba(255, 255, 255, 0.42);
+    object-fit: cover;
+    box-shadow: var(--shadow);
+    display: block;
+    }
+
+    .content {
+      padding: 42px 0 64px;
+    }
+
+    section {
+      margin-top: 30px;
+      padding: 30px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 28px rgba(24, 32, 47, 0.06);
+    }
+
+    section:first-child {
+      margin-top: 0;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      font-size: 1.55rem;
+      line-height: 1.2;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .skills li {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #eef7f6;
+      color: #0d5d56;
+      border: 1px solid #c9e8e4;
+      font-weight: 700;
+      font-size: 0.94rem;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+      margin: 0;
+    }
+
+    .education-item {
+      padding-left: 16px;
+      border-left: 4px solid var(--accent);
+    }
+
+    .education-item h3,
+    .project h3 {
+      margin: 0 0 6px;
+      font-size: 1.08rem;
+    }
+
+    .education-item p,
+    .project p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 26px;
+      align-items: start;
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 12px;
+      margin: 22px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .feature-list li {
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fbfcfe;
+    }
+
+    .feature-list strong {
+      color: var(--ink);
+    }
+
+    .chart {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fbfcfe;
+    }
+
+    .chart-title {
+      margin: 0 0 16px;
+      font-weight: 800;
+      font-size: 0.95rem;
+    }
+
+    .bar {
+      display: grid;
+      grid-template-columns: 92px 1fr 44px;
+      gap: 10px;
+      align-items: center;
+      margin: 13px 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .track {
+      height: 12px;
+      border-radius: 999px;
+      background: #e6edf5;
+      overflow: hidden;
+    }
+
+    .fill {
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--blue));
+    }
+
+    .contact-links {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .contact-card {
+      min-height: 86px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fbfcfe;
+    }
+
+    .contact-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 400;
+      word-break: break-word;
+    }
+
+    footer {
+      color: var(--muted);
+      text-align: center;
+      padding: 0 20px 34px;
+      font-size: 0.92rem;
+    }
+
+    .gallery{
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+        gap:25px;
+        margin-top:20px;
+    }
+
+    .gallery figure{
+        margin:0;
+        background:white;
+        border-radius:10px;
+        overflow:hidden;
+        box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    }
+
+    .gallery img{
+        width:100%;
+        height:250px;
+        object-fit:contain;
+        background:#f8f9fa;
+        padding:10px;
+    }
+
+    .gallery figcaption{
+        padding:10px;
+        text-align:center;
+        font-size:0.9rem;
+        color:#5e6a7d;
+    }
+
+    @media (max-width: 820px) {
+      .hero {
+        padding-top: 38px;
+      }
+
+      .hero-inner,
+      .project-grid,
+      .contact-links {
+        grid-template-columns: 1fr;
+      }
+
+      .portrait {
+        margin: 6px 0 0;
+        width: min(220px, 72vw);
+      }
+
+      section {
+        padding: 22px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .hero-inner,
+      .content {
+        width: min(100% - 28px, 1080px);
+      }
+
+      .actions {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .bar {
+        grid-template-columns: 1fr;
+        gap: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div class="hero-inner">
+        <div>
+          <p class="eyebrow">Portafolio profesional</p>
+          <h1>Fernando Benitez | Manuel Arrom</h1>
+        
+
+            <p class="subtitle">
+            Estudiantes de Ingeniería Electromecánica - FIUNA
+            </p>
+          <p class="intro">
+            Somos estudiantes de Ingeniería Electromecánica interesados en la aplicación de inteligencia artificial, análisis de datos y aprendizaje automático para la resolución de problemas de ingeniería. Nuestro trabajo se enfoca en el procesamiento de señales, análisis de vibraciones y desarrollo de modelos predictivos utilizando Python.          </p>
+          <div class="actions" aria-label="Enlaces principales">
+            <a class="button primary" href="https://github.com/fernandoBenitezFIUNA/proyecto_vibraciones" target="_blank" rel="noreferrer">Ver proyecto IA</a>
+            <a class="button" href="mailto:fgbenitez@fiuna.edu.py">Contactar</a>
+          </div>
+        </div>
+        <img src="images\foto.jpg" alt="Fernando Benitez" class="portrait">
+      </div>
+    </header>
+
+    <div class="content">
+      <section id="habilidades" aria-labelledby="habilidades-title">
+        <h2 id="habilidades-title">Habilidades</h2>
+        <ul class="skills">
+          <li>Python</li>
+          <li>Machine Learning</li>
+          <li>Data Analysis</li>
+          <li>Git</li>
+          <li>Pandas</li>
+          <li>NumPy</li>
+          <li>Scikit-Learn</li>
+          <li>Optuna</li>
+          <li>Grid Search</li>
+          <li>Matplotlib</li>
+          <li>SciPy</li>
+          <li>Jupyter Notebook</li>
+        </ul>
+      </section>
+
+      
+
+      <section id="educacion" aria-labelledby="educacion-title">
+        <h2 id="educacion-title">Educación</h2>
+        <div class="timeline">
+          <article class="education-item">
+            <h3>Ingenieria Electromecánica</h3>
+            <p>Facultad de Ingeniería - Universidad Nacional de Asunción (FIUNA) | En curso</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="proyecto" class="project" aria-labelledby="proyecto-title">
+        <h2 id="proyecto-title">Proyecto de Inteligencia Artificial</h2>
+        <div class="project-grid">
+          <div>
+            <h3>
+            Clasificación de Condiciones de Desbalance mediante Machine Learning y Análisis de Vibraciones
+            </h3>
+            <p>
+            Este proyecto tiene como objetivo clasificar automáticamente distintas condiciones de desbalance en un sistema rotativo mediante el análisis de señales de vibración. Para ello se adquirieron datos experimentales utilizando acelerómetros, se extrajeron características estadísticas y espectrales de las señales, y posteriormente se entrenaron modelos de Machine Learning para identificar el estado del sistema.
+            </p>
+
+            <ul class="feature-list">
+
+            <li>
+            <strong>Dataset:</strong>
+            Datos obtenidos de un banco experimental rotativo bajo cuatro condiciones:
+            Normal, Unbalance 19 g, Unbalance 23 g y Unbalance 27 g.
+            </li>
+
+            <li>
+            <strong>Características:</strong>
+            RMS, Peak, Crest Factor, Kurtosis, Desviación Estándar,
+            Media Absoluta, Frecuencia Dominante, Amplitud Dominante,
+            Energía Espectral, Centroide Espectral y Bandwidth Espectral.
+            </li>
+
+            <li>
+            <strong>Modelo:</strong>
+            Se evaluaron Random Forest y SVM. El modelo Random Forest presentó el mejor desempeño y fue seleccionado como modelo final.
+            </li>
+
+            <li>
+            <strong>Visualización:</strong>
+            Se realizaron gráficos temporales, FFT, matrices de confusión y comparación de métricas para evaluar el desempeño del modelo.
+            </li>
+
+            <li>
+            <strong>Repositorio:</strong>
+            <a href="https://github.com/fernandoBenitezFIUNA/proyecto_vibraciones" target="_blank">
+            github.com/fernandoBenitezFIUNA/proyecto_vibraciones
+            </a>
+            </li>
+
+            </ul>
+          </div>
+
+          <aside class="chart" aria-label="Grafica ilustrativa de resultados del modelo">
+            <p class="chart-title">Resultados del modelo</p>
+            <div class="bar">
+              <span>Random Forest CV</span>
+              <div class="track"><div class="fill" style="width: 76.8%"></div></div>
+              <strong>76.8%</strong>
+            </div>
+            <div class="bar">
+              <span>SVM CV</span>
+              <div class="track"><div class="fill" style="width: 45.6%"></div></div>
+              <strong>45.6%</strong>
+            </div>
+            <div class="bar">
+              <span>RF Test</span>
+              <div class="track"><div class="fill" style="width: 93%"></div></div>
+              <strong>93%</strong>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+    
+
+        <section id="visualizaciones">
+
+        <h2>Visualizaciones del Proyecto</h2>
+
+        <p>
+        Algunas de las gráficas utilizadas para el análisis y evaluación de los modelos.
+        </p>
+
+        <div class="gallery">
+
+        <figure>
+            <img src="images\senal_temporal.png" alt="Señal temporal">
+            <figcaption>Señal de vibración en el dominio temporal</figcaption>
+        </figure>
+
+        <figure>
+            <img src="images\fft.png" alt="FFT">
+            <figcaption>Transformada rápida de Fourier (FFT)</figcaption>
+        </figure>
+
+        <figure>
+            <img src="images\confusion_matrix.png" alt="Matriz de confusión">
+            <figcaption>Matriz de confusión del modelo Random Forest</figcaption>
+        </figure>
+
+        <figure>
+            <img src="images\accuracy_models.png" alt="Comparación de modelos">
+            <figcaption>Comparación de Accuracy entre modelos</figcaption>
+        </figure>
+
+        </div>
+
+        </section>
+
+        <section>
+        <h2>Resultados Destacados</h2>
+
+        <ul>
+        <li>Clasificación de 4 condiciones de desbalance.</li>
+        <li>Extracción de características estadísticas y espectrales.</li>
+        <li>Comparación entre Random Forest y SVM.</li>
+        <li>Accuracy final del 93% con Random Forest.</li>
+        <li>Implementación completa en Python y Scikit-Learn.</li>
+        </ul>
+
+        </section>
+
+      <section id="contacto" aria-labelledby="contacto-title">
+        <h2 id="contacto-title">Contacto</h2>
+        <div class="contact-links">
+          <a class="contact-card" href="mailto:fgbenitez@fiuna.edu.py">
+            Correo
+            <span>fgbenitez@fiuna.edu.py</span>
+          </a>
+          <a class="contact-card" href="https://linkedin.com/in/fernando-benitez-5153421b7" target="_blank" rel="noreferrer">
+            LinkedIn
+            <span>linkedin.com/in/fernando-benitez-5153421b7</span>
+          </a>
+          <a class="contact-card" href="https://github.com/fernandoBenitezFIUNA" target="_blank" rel="noreferrer">
+            GitHub
+            <span>github.com/fernandoBenitezFIUNA</span>
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    © 2026 Fernando Benitez & Manuel Arrom | Proyecto de Inteligencia Artificial - FIUNA
+  </footer>
+</body>
+</html>
