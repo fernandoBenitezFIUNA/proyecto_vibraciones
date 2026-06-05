@@ -33,6 +33,25 @@ Condiciones evaluadas:
 - Centroide espectral
 - Bandwidth espectral
 
+## Tecnologías utilizadas
+
+- Python
+- Pandas
+- NumPy
+- SciPy
+- Scikit-Learn
+- Matplotlib
+- Jupyter Notebook
+
+## Metodología
+
+1. Adquisición de señales de vibración.
+2. Segmentación de señales.
+3. Extracción de características estadísticas y espectrales.
+4. Construcción del dataset.
+5. Entrenamiento de modelos de Machine Learning.
+6. Evaluación mediante validación cruzada y conjunto de prueba.
+   
 ## Modelos evaluados
 
 - Random Forest
