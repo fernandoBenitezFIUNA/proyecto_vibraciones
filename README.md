@@ -61,8 +61,26 @@ Condiciones evaluadas:
 
 | Modelo | Accuracy CV |
 |----------|------------|
-| Random Forest | 76.8% |
+| Random Forest | 84.7% |
 | SVM | 45.6% |
+
+*Nota: Se actualizó el Accuracy CV de Random Forest al 84.7% en base al promedio de las iteraciones.*
+
+### Detalle de Validación Cruzada (Random Forest)
+
+| Fold | Accuracy |
+|------|----------|
+| 1    | 0.928571 |
+| 2    | 0.821429 |
+| 3    | 0.857143 |
+| 4    | 0.888889 |
+| 5    | 0.740741 |
+
+**Resumen de Cross Validation:**
+- **Accuracy promedio:** 0.8474
+- **Accuracy máximo:** 0.9286
+- **Accuracy mínimo:** 0.7407
+- **Desviación estándar:** 0.0640
 
 El modelo Random Forest fue seleccionado como modelo final.
 
