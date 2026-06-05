@@ -87,3 +87,43 @@ Para proporcionar más detalle sobre el desempeño del modelo final (Random Fore
 - **Desviación estándar:** 0.0640
 
 ---
+
+**Matrices de Confusión Detalladas por Fold:**
+
+A continuación se presentan las matrices de confusión generadas para cada una de las iteraciones de la validación cruzada. Note que estas matrices detalladas muestran el desempeño individual en diferentes subconjuntos de datos.
+
+**Iteración 1 (cv_fold1):**
+![Matrix Fold 1](images/cv_fold1.png)
+
+**Iteración 2 (cv_fold2):**
+![Matrix Fold 2](images/cv_fold2.png)
+
+**Iteración 3 (cv_fold3):**
+![Matrix Fold 3](images/cv_fold3.png)
+
+**Iteración 4 (cv_fold4):**
+![Matrix Fold 4](images/cv_fold4.png)
+
+**Iteración 5 (cv_fold5):**
+![Matrix Fold 5](images/cv_fold5.png)
+
+---
+
+El modelo Random Forest fue seleccionado como modelo final.
+
+Accuracy obtenido en el conjunto de prueba:
+
+**93%**
+
+## Visualizaciones
+
+![FFT](images/FFT.png)
+
+![Confusion Matrix](images/confusion_matrix.png)
+
+## Autores
+
+- Fernando Benitez
+- Manuel Arrom
+
+FIUNA - 2026
